@@ -5,6 +5,8 @@
 
 const char *ssid = "00000000 2.4";
 const char *password = "ballerina";
+String webServerUI = "http://keluke.000webhostapp.com/interface.php";
+String webServerAddData = "http://keluke.000webhostapp.com/from_micro.php?led=25&sensor=25";
 
 String makeRequest();
 String payload;

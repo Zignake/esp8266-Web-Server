@@ -11,12 +11,12 @@ String makeRequest()
     HTTPClient httpMakeRequest;
     String payload;
 
-    httpMakeRequest.begin(client, "http://keluke.000webhostapp.com/from_micro.php?unit=1&sensor=140");
+    httpMakeRequest.begin(client, webServerAddData);
     int httpMRCode = httpMakeRequest.GET();
     Serial.printf("httpMRCode: %d\n", httpMRCode);
 
     Serial.print("[HTTP] begin...\n");
-    if (http.begin(client, "http://keluke.000webhostapp.com/interface.php")) // client is what type of network are u using. wifi, ethernet, gsm.
+    if (http.begin(client, webServerUI)) // client is what type of network are u using. wifi, ethernet, gsm.
     { 
 
       Serial.print("[HTTP] GET...\n");
