@@ -1,0 +1,3 @@
+https://jaycarlson.net/embedded-linux/
+https://wiki.aalto.fi/download/attachments/84751497/compiling_kernel_v1.pdf?version=1&modificationDate=1384808539000&api=v2
+http://www.ijera.com/special_issue/NCDATES/ECE/PART-4/ECE%20160-0507.pdf

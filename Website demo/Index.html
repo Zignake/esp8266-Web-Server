@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <title>Dispenser Manager</title>
+  <link rel="stylesheet" type="text/css" href="Style.css">
+
+
+  <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+  <script type="text/javascript">
+    google.charts.load("current", { packages: ['corechart'] });
+    google.charts.setOnLoadCallback(drawChart);
+    function drawChart() {
+      var data = google.visualization.arrayToDataTable([
+        ["Dispenser No.", "Quantity", { role: "style" }],
+        ["Dispenser 1", 0.2, "#9d0208"],
+        ["Dispenser 2", 0.6, "#9d0208"],
+        ["Dispenser 3", 0.3, "#9d0208"],
+        ["Dispenser 4", 0.5, "#9d0208"]
+      ]);
+
+      var view = new google.visualization.DataView(data);
+      view.setColumns([0, 1,
+        {
+          calc: "stringify",
+          sourceColumn: 1,
+          type: "string",
+          role: "annotation"
+        },
+        2]);
+
+      var options = {
+        title: "Dispenser Fill in %",
+        width: 600,
+        height: 400,
+        bar: {
+          groupWidth: "50%"
+        },
+        legend: {
+          position: "none"
+        },
+        vAxis: {
+          format: 'percent',
+          viewWindow: {
+            max: 1.0,
+            min: 0.0,
+          }
+        },
+      };
+      var chart = new google.visualization.ColumnChart(document.getElementById("columnchart_values"));
+      chart.draw(view, options);
+    }
+  </script>
+</head>
+
+<body>
+  <header>
+    <div class="title">
+      <h1>
+        Smart Sanitizer Dispenser
+      </h1>
+    </div>
+
+
+    <div id="columnchart_values" class="chart"></div>
+    <style>
+      body {
+        overflow-x: hidden;
+        position: relative;
+      }
+    </style>
+
+
+
+  </header>
+</body>
+
+</html>

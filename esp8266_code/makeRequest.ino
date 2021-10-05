@@ -2,9 +2,6 @@ String makeRequest()
 {
   if (WiFi.status() == WL_CONNECTED)
   {
-//    Serial.println("Wifi Connected Success!");
-//    Serial.print("NodeMCU IP Address : ");
-//    Serial.println(WiFi.localIP());
 
     WiFiClient client;
     HTTPClient http;
@@ -26,10 +23,10 @@ String makeRequest()
       {
         Serial.printf("[HTTP] GET... code: %d\n", httpCode);
 
-        if (httpCode == HTTP_CODE_OK || httpCode == HTTP_CODE_MOVED_PERMANENTLY)
+        if (httpCode == HTTP_CODE_OK)
         {
           payload = http.getString();
-//          Serial.println(payload);
+          Serial.println(payload); 
         }
       }
       else
